@@ -1,0 +1,271 @@
+$primary-color: #FFEFE7;
+$secondary-color: #FFDAC6;
+$tertiary-color: #BABD8D;
+$primary-text-color: #7C6A0A;
+$complementary-color: #FA9500;
+$font-stack: "IBM Plex Sans", sans-serif;
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: $primary-color;
+  font-family: $font-stack;
+  max-width: 1366px;
+  margin: auto;
+}
+
+/*Estilos del Navbar*/
+nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 85px;
+  padding: 10px 30px;
+  p{
+    font-size: 1.5em;
+    color: $primary-text-color;
+  }
+  .social-icons{
+    display: flex;
+    gap: 20px;
+    button{
+      background: none;
+      border-style: none;
+    }
+  }
+}
+
+/*Estilos del Hero*/
+article{
+  display: flex;
+  flex-direction: column-reverse;
+  width: auto;
+  padding: 10px 25px;
+  color: $primary-text-color;
+  .hero-info{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    h1{
+      font-size: 2em;
+    }
+    button{
+      background-color: $complementary-color;
+      border: none;
+      border-radius: 35px;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-weight: bold;
+      cursor: pointer;
+      width: 50%;
+      align-self: center;
+    }
+  }
+  .section-image{
+    img{
+      width: 100%;
+      border-radius: 5%;
+    }
+  }
+}
+
+/*Estilos de los catálogos principales*/
+.products{
+  width: 100%;
+  height: auto;
+  padding: 10px 30px;
+  .healthcare{
+    margin-bottom: 30px;
+    h2{
+      color: $primary-text-color;
+      font-weight: 400;
+    }
+    .product-card-container{
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      .product-card{
+        flex: 0 0 auto;
+        width: 80%;
+        height: auto;
+        padding: 15px;
+        margin: 15px 15px;
+        border-radius: 15px;
+        background-color: $secondary-color;
+        color: $primary-text-color;
+        text-align: center;
+        svg{
+          position: relative;
+          left: 45%;
+        }
+        .product-image{
+          padding: 10px 0;
+          img{
+            width: 90%;
+            border-radius: 15px;
+          }
+        }
+      }
+    }
+  }
+  .furniture{
+    @extend .healthcare;
+    .product-card-container{
+      .product-card{
+        background-color: $tertiary-color;
+        color: white;
+      }
+    }
+  }
+}
+
+/*Estilos para la información de la empresa*/
+.company-info{
+  .about-us{
+    padding: 10px 32px;
+    h2{
+      margin-bottom: 30px;
+      color: $primary-text-color;
+    }
+    .earth{
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+      margin-bottom: 30px;
+      img{
+        width: 30%;
+      }
+      p{
+        color: #E86424;
+        text-align: center;
+        font-size: 1.2em;
+      }
+    }
+    .innovation{
+      @extend .earth;
+    }
+  }
+  .gallery{
+    @extend .about-us;
+    img{
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 5%;
+      margin: 15px 0;
+    }
+  }
+  .map{
+    @extend .gallery;
+    img{
+      height: 500px;
+    }
+  }
+}
+
+/*Estilos del Footer*/
+footer{
+  padding: 10px 32px;
+  background-color: $complementary-color;
+  color: white;
+  width: 100%;
+  h3{
+    font-weight: 400;
+    margin-bottom: 30px;
+  }
+  ul{
+    list-style-type: none;
+    margin-bottom: 30px;
+    li{
+      padding: 10px;
+      cursor: pointer;
+    }
+    li:hover{
+      text-decoration: underline;
+    }
+  }
+  .social-media{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+}
+
+$breakpoint-tablet: 768px;
+@media (min-width: $breakpoint-tablet){
+  /*Estilos del hero*/
+  article{
+    flex-direction: row;
+    align-items: center;
+    .hero-info{
+      width: 60%;
+      gap: 50px;
+      button{
+        align-self: flex-start;
+      }
+    }
+    .section-image{
+      width: 40%;
+      img{
+        height: 500px;
+        width: 100%;
+        border-radius: 5%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  /*Estilos de los catálogos principales*/
+  .products{
+    .healthcare{
+      .product-card-container{
+        display: flex;
+        overflow-x: visible;
+        .product-card{
+          width: 30%;
+        }
+      }
+    }
+  }
+
+  /*Estilos para la información de la empresa*/
+  .company-info{
+    .about-us{
+      .about-us-container{
+        display: flex;
+        .earth{
+          display: flex;
+          flex-direction: row;
+          width: 50%;
+        }
+      }
+    }
+    .gallery{
+      .image-container{
+        display: flex;
+        justify-content: space-evenly;
+        img{
+          width: 30%;
+          height: 400px;
+          object-fit: cover;
+          border-radius: 5%;
+          margin: 15px 0;
+        }
+      }
+    }
+    .map{
+      img{
+        height: 500px;
+      }
+    }
+  }
+}

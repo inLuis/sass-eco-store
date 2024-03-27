@@ -1,0 +1,235 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #FFEFE7;
+  font-family: "IBM Plex Sans", sans-serif;
+  max-width: 1366px;
+  margin: auto;
+}
+
+/*Estilos del Navbar*/
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 85px;
+  padding: 10px 30px;
+}
+nav p {
+  font-size: 1.5em;
+  color: #7C6A0A;
+}
+nav .social-icons {
+  display: flex;
+  gap: 20px;
+}
+nav .social-icons button {
+  background: none;
+  border-style: none;
+}
+
+/*Estilos del Hero*/
+article {
+  display: flex;
+  flex-direction: column-reverse;
+  width: auto;
+  padding: 10px 25px;
+  color: #7C6A0A;
+}
+article .hero-info {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+article .hero-info h1 {
+  font-size: 2em;
+}
+article .hero-info button {
+  background-color: #FA9500;
+  border: none;
+  border-radius: 35px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: bold;
+  cursor: pointer;
+  width: 50%;
+  align-self: center;
+}
+article .section-image img {
+  width: 100%;
+  border-radius: 5%;
+}
+
+/*Estilos de los catálogos principales*/
+.products {
+  width: 100%;
+  height: auto;
+  padding: 10px 30px;
+}
+.products .healthcare, .products .furniture {
+  margin-bottom: 30px;
+}
+.products .healthcare h2, .products .furniture h2 {
+  color: #7C6A0A;
+  font-weight: 400;
+}
+.products .healthcare .product-card-container, .products .furniture .product-card-container {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+.products .healthcare .product-card-container .product-card, .products .furniture .product-card-container .product-card {
+  flex: 0 0 auto;
+  width: 80%;
+  height: auto;
+  padding: 15px;
+  margin: 15px 15px;
+  border-radius: 15px;
+  background-color: #FFDAC6;
+  color: #7C6A0A;
+  text-align: center;
+}
+.products .healthcare .product-card-container .product-card svg, .products .furniture .product-card-container .product-card svg {
+  position: relative;
+  left: 45%;
+}
+.products .healthcare .product-card-container .product-card .product-image, .products .furniture .product-card-container .product-card .product-image {
+  padding: 10px 0;
+}
+.products .healthcare .product-card-container .product-card .product-image img, .products .furniture .product-card-container .product-card .product-image img {
+  width: 90%;
+  border-radius: 15px;
+}
+.products .furniture .product-card-container .product-card {
+  background-color: #BABD8D;
+  color: white;
+}
+
+/*Estilos para la información de la empresa*/
+.company-info .about-us, .company-info .gallery, .company-info .map {
+  padding: 10px 32px;
+}
+.company-info .about-us h2, .company-info .gallery h2, .company-info .map h2 {
+  margin-bottom: 30px;
+  color: #7C6A0A;
+}
+.company-info .about-us .earth, .company-info .gallery .earth, .company-info .map .earth, .company-info .about-us .innovation, .company-info .gallery .innovation, .company-info .map .innovation {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.company-info .about-us .earth img, .company-info .gallery .earth img, .company-info .map .earth img, .company-info .about-us .innovation img, .company-info .gallery .innovation img, .company-info .map .innovation img {
+  width: 30%;
+}
+.company-info .about-us .earth p, .company-info .gallery .earth p, .company-info .map .earth p, .company-info .about-us .innovation p, .company-info .gallery .innovation p, .company-info .map .innovation p {
+  color: #E86424;
+  text-align: center;
+  font-size: 1.2em;
+}
+.company-info .gallery img, .company-info .map img {
+  width: 100%;
+  height: 400px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 5%;
+  margin: 15px 0;
+}
+.company-info .map img {
+  height: 500px;
+}
+
+/*Estilos del Footer*/
+footer {
+  padding: 10px 32px;
+  background-color: #FA9500;
+  color: white;
+  width: 100%;
+}
+footer h3 {
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+footer ul {
+  list-style-type: none;
+  margin-bottom: 30px;
+}
+footer ul li {
+  padding: 10px;
+  cursor: pointer;
+}
+footer ul li:hover {
+  text-decoration: underline;
+}
+footer .social-media {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+@media (min-width: 768px) {
+  /*Estilos del hero*/
+  article {
+    flex-direction: row;
+    align-items: center;
+  }
+  article .hero-info {
+    width: 60%;
+    gap: 50px;
+  }
+  article .hero-info button {
+    align-self: flex-start;
+  }
+  article .section-image {
+    width: 40%;
+  }
+  article .section-image img {
+    height: 500px;
+    width: 100%;
+    border-radius: 5%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  /*Estilos de los catálogos principales*/
+  .products .healthcare .product-card-container, .products .furniture .product-card-container {
+    display: flex;
+    overflow-x: visible;
+  }
+  .products .healthcare .product-card-container .product-card, .products .furniture .product-card-container .product-card {
+    width: 30%;
+  }
+  /*Estilos para la información de la empresa*/
+  .company-info .about-us .about-us-container, .company-info .gallery .about-us-container, .company-info .map .about-us-container {
+    display: flex;
+  }
+  .company-info .about-us .about-us-container .earth, .company-info .gallery .about-us-container .earth, .company-info .map .about-us-container .earth, .company-info .about-us .about-us-container .innovation, .company-info .gallery .about-us-container .innovation, .company-info .map .about-us-container .innovation {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+  }
+  .company-info .gallery .image-container, .company-info .map .image-container {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .company-info .gallery .image-container img, .company-info .map .image-container img {
+    width: 30%;
+    height: 400px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    border-radius: 5%;
+    margin: 15px 0;
+  }
+  .company-info .map img {
+    height: 500px;
+  }
+}/*# sourceMappingURL=main.css.map */
